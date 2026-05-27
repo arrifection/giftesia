@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Download, Heart } from 'lucide-react'
-import CardPreview from '../components/CardPreview'
+import CardPreview, { MAX_PREVIEW_MESSAGE } from '../components/CardPreview'
 import { cardStyles } from '../data/dummyData'
 
 export default function CardGeneratorPage() {
@@ -12,10 +12,14 @@ export default function CardGeneratorPage() {
     alert('Card download will be available when backend is connected. Your preview looks beautiful!')
   }
 
+  const handleMessageChange = (e) => {
+    setMessage(e.target.value.slice(0, MAX_PREVIEW_MESSAGE))
+  }
+
   return (
-    <div className="px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+    <div className="card-page px-4 pb-12 sm:px-6 sm:pb-16 lg:px-8">
       <div className="mx-auto max-w-5xl">
-        <div className="mb-10 text-center">
+        <div className="mb-10 text-center sm:mb-12">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-rose-soft/30 px-3 py-1 text-xs font-medium text-plum">
             <Heart className="h-3.5 w-3.5" />
             Card Generator
@@ -28,8 +32,8 @@ export default function CardGeneratorPage() {
           </p>
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
-          <div className="space-y-6">
+        <div className="grid items-start gap-10 lg:grid-cols-[1fr_auto] lg:gap-14">
+          <div className="space-y-6 rounded-2xl border border-rose-soft/30 bg-white/50 p-6 shadow-soft sm:p-8">
             <div>
               <label htmlFor="recipient" className="mb-2 block text-sm font-medium text-plum-deep">
                 Recipient name
@@ -40,21 +44,28 @@ export default function CardGeneratorPage() {
                 value={recipientName}
                 onChange={(e) => setRecipientName(e.target.value)}
                 placeholder="e.g. Sophia"
+                maxLength={40}
                 className="w-full rounded-xl border border-rose-soft/40 bg-white/70 px-4 py-3 text-sm text-plum-deep placeholder:text-plum-light/50 focus:border-gold/50 focus:ring-2 focus:ring-gold/20"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="mb-2 block text-sm font-medium text-plum-deep">
-                Your message
-              </label>
+              <div className="mb-2 flex items-center justify-between">
+                <label htmlFor="message" className="text-sm font-medium text-plum-deep">
+                  Your message
+                </label>
+                <span className="text-xs text-plum-light">
+                  {message.length}/{MAX_PREVIEW_MESSAGE}
+                </span>
+              </div>
               <textarea
                 id="message"
                 value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                onChange={handleMessageChange}
                 placeholder="Write something heartfelt…"
                 rows={4}
-                className="w-full resize-none rounded-xl border border-rose-soft/40 bg-white/70 px-4 py-3 text-sm text-plum-deep placeholder:text-plum-light/50 focus:border-gold/50 focus:ring-2 focus:ring-gold/20"
+                maxLength={MAX_PREVIEW_MESSAGE}
+                className="w-full resize-none rounded-xl border border-rose-soft/40 bg-white/70 px-4 py-3 text-sm leading-relaxed text-plum-deep placeholder:text-plum-light/50 focus:border-gold/50 focus:ring-2 focus:ring-gold/20"
               />
             </div>
 
@@ -89,11 +100,11 @@ export default function CardGeneratorPage() {
             </button>
           </div>
 
-          <div className="flex items-start justify-center lg:sticky lg:top-24">
-            <div>
-              <p className="mb-4 text-center text-xs font-medium uppercase tracking-wider text-plum-light">
-                Live preview
-              </p>
+          <div className="flex flex-col items-center lg:sticky lg:top-28">
+            <p className="mb-4 text-center text-xs font-medium uppercase tracking-wider text-plum-light">
+              Live preview
+            </p>
+            <div className="flex w-full justify-center">
               <CardPreview
                 recipientName={recipientName}
                 message={message}

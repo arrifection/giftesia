@@ -176,3 +176,74 @@ select:focus {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-rose-deep);
 }
+
+.card-page {
+  padding-top: 120px;
+}
+
+.preview-card {
+  width: 360px;
+  height: 520px;
+  min-height: 520px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+@media (max-width: 639px) {
+  .preview-card {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    aspect-ratio: 5 / 7;
+    min-height: 420px;
+  }
+}
+
+.preview-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+@media (max-width: 639px) {
+  .preview-card-inner {
+    min-height: 100%;
+  }
+}
+
+.preview-card-header {
+  flex-shrink: 0;
+  padding-top: 2.5rem;
+  padding-bottom: 0.75rem;
+}
+
+.preview-card-name {
+  flex-shrink: 0;
+  min-height: 5rem;
+  max-height: 5.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.preview-card-footer {
+  flex-shrink: 0;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.preview-message {
+  min-height: 90px;
+  max-height: 110px;
+  overflow: hidden;
+  line-height: 1.6;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
