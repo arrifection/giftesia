@@ -50,7 +50,7 @@ It is designed to make gift selection simple, fast, and personalized using AI-as
 
 ### 🎁 Gift Recommendation View
 
-![Recommendations](./recommendations.png)
+![Recommendations](./cards.png)
 
 ---
 
