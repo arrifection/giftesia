@@ -48,7 +48,7 @@ It is designed to make gift selection simple, fast, and personalized using AI-as
 
 ![Home](./home.png)
 
-### 🎁 Gift Recommendation View
+### 🎁 Card creation View
 
 ![Recommendations](./cards.png)
 
