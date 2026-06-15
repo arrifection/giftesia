@@ -1,17 +1,59 @@
-# giftesia
+# Giftesia 🎁
 
-AI-powered gift assistant — thoughtful gift suggestions, personalized cards, birthday reminders, and more.
+An AI-powered gift recommendation platform that helps users find personalized gift ideas and generate custom greeting cards for special occasions.
 
-## Frontend
+**Live:** https://giftesia.vercel.app
 
-React + Vite app in `frontend/`.
+---
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+## 📌 Overview
 
-## Backend
+Giftesia uses intelligent suggestions to help users choose meaningful gifts based on preferences, occasions, and relationships.
+It is designed to make gift selection simple, fast, and personalized using AI-assisted logic.
 
-Backend services will live in `backend/` (coming soon).
+---
+
+## 🚧 Project Status
+
+⚠️ This project is still **under development**.
+
+* Backend integration is not fully connected yet
+* Some features are currently frontend-only
+* API integration and full system wiring is planned in next phase
+
+---
+
+## 🚀 Features
+
+* AI-based gift recommendations
+* Occasion-based filtering (birthday, anniversary, etc.)
+* Personalized suggestions based on user input
+* Custom greeting card generation (UI ready)
+* Clean and responsive interface
+
+---
+
+## 🛠️ Tech Stack
+
+* JavaScript
+* React (frontend)
+* AI Integration (planned / partial)
+* Vercel Deployment
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+![Home](./home.png)
+
+### 🎁 Gift Recommendation View
+
+![Recommendations](./recommendations.png)
+
+---
+
+## ⚙️ Purpose
+
+This project demonstrates early-stage product development with AI-assisted features, currently evolving toward full backend integration and production-ready architecture.
